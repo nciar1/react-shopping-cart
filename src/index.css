@@ -74,8 +74,8 @@ footer{
   height: 100%;
 }
 .product img {
-  max-width: 37rem;
-  max-height: 37rem;
+  max-width: 3rem;
+  max-height: 3rem;
 }
 .product-price {
   display: flex;
@@ -164,4 +164,52 @@ footer{
 
 .filter div{
   flex: 1; /*3 same and equal width sections*/
+}
+
+/*Index.css*/
+
+.cart{
+padding: 1 rem;
+margin: 1rem;
+display: flex;
+}
+
+
+
+.cart-header{
+  border-color: 0.1 rem white solid;
+}
+
+.cart-items{
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-items img{
+  width: 5 rem;
+}
+
+.cart-items li div{
+  padding: 0.5rem;
+}
+
+.cart-items li div:last-child{
+  flex: 1;
+}
+
+.right{
+  text-align: right;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.total > div{
+  flex: 1;
+  font-size: 2rem;
 }
