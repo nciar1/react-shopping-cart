@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import formatCurrency from '../util';
-import Modal from "react-modal";
+import Modal from 'react-modal';
 
 
 export default class Products extends Component {
