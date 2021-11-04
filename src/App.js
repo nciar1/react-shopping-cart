@@ -12,16 +12,25 @@ constructor(){
     products: data.products,
     size:"",
     sort: "",
-    cartItems: [], //by default there is no items in the cart
+    cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):
+    [], //by default there is no items in the cart
   };
+}
+
+createOrder =(order) => {
+  alert("need to save" + order.name);
 }
 
 removeFromCart = (product) => {
   const cartItems = this.state.cartItems.slice();
   this.setState({cartItems: cartItems.filter((x)=> x._id !== product._id), 
   });//we get rid of current product that user selected to remove})
+
+  localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((x)=> x._id !== product._id))); //after filtering we set filtered data inside the state
+
   
 }
+
 
 
 addToCart = (product) => {
@@ -38,6 +47,10 @@ addToCart = (product) => {
     cartItems.push({...product, count: 1}) //add instant of product into cart
   }
 this.setState({cartItems});
+
+//use local storage to keep persistent
+localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
 
 }
 
@@ -95,7 +108,9 @@ this.setState({size: event.target.value, products: data.products});}
           </div>
           <div className="sidebar">
             <Cart cartItems = {this.state.cartItems} 
-            removeFromCart = {this.removeFromCart}/>
+            removeFromCart = {this.removeFromCart}
+            createOrder= {this.createOrder}
+            />
                     </div>
         </div>
 
