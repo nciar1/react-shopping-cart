@@ -4,7 +4,7 @@ const shortid= require("shortid");
 const bodyParser = require("body-parser");
 //run express as a function and set result inside app variable
 const app = express();
-app.use(bodyParser.json());
+/*app.use(bodyParser.json());*/
 
 //run database with URL and varibles to make connection easiers
 mongoose.connect("mongodb://localhost/react-shopping-cart-db",{
