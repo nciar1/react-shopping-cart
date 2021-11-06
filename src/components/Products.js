@@ -30,8 +30,7 @@ class Products extends Component {
         const {product} = this.state;
         return (
             <div>
-                {
-                    !this.props.products ?( <div> Loading... </div>)
+                {!this.props.products ? (<div> Loading... </div>)
                     :
                     (
                     <ul className="products">
