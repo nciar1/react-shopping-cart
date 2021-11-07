@@ -1,7 +1,10 @@
+import { connect } from 'mongoose';
 import React, { Component } from 'react'
+import { removeFromCart } from '../actions/cartActions';
 import formatCurrency from '../util'
+import { connect } from 'react-redux';
 
-export default class Cart extends Component {
+class Cart extends Component {
 
     constructor(props){
         super(props);
@@ -116,3 +119,8 @@ export default class Cart extends Component {
         )
     }
 }
+export default connect((state) => ({
+    cartItems: state.cart.cartItems,
+}),
+removeFromCart
+)(Cart);
