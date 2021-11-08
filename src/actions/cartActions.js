@@ -2,7 +2,7 @@ import { productsReducer } from "../reducers/productReducers";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../types";
 
 
-export const addToCart = (items, products) => (dispatch) =>
+export const addToCart = (items, product) => (dispatch) =>
 {
 const cartItems = items.slice(); //makes clone of items
 let alreadyExists = false;
@@ -28,7 +28,8 @@ localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
 
 export const removeFromCart = (items, product) => (dispatch) =>{
-const cartItems = items.slice().filter(
+
+    const cartItems = items.slice().filter(
     x => x._id !== product._id //if item is not equal to product id then itwill be added to items
 
 );

@@ -1,4 +1,3 @@
-import { connect } from 'mongoose';
 import React, { Component } from 'react'
 import { removeFromCart } from '../actions/cartActions';
 import formatCurrency from '../util'
